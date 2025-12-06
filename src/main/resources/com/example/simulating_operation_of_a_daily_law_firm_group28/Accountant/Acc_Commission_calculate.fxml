@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="550.0" prefWidth="750.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.simulating_operation_of_a_daily_law_firm_group28.Accountant.Controller.Acc_LawyerCommissionController">
+
+    <children>
+
+        <!-- Lawyer Commission Button -->
+        <Button fx:id="lawyerCommissionBtn"
+                layoutX="40.0" layoutY="30.0"
+                onAction="#selectLawyerCommission"
+                text="Lawyer Commission" />
+
+        <!-- Lawyer ID -->
+        <Label layoutX="40.0" layoutY="80.0" text="Lawyer ID"/>
+        <TextField fx:id="lawyerIdField" layoutX="140.0" layoutY="75.0" prefWidth="200"/>
+
+        <!-- Commission Percentage -->
+        <Label layoutX="40.0" layoutY="120.0" text="Commission (%)"/>
+        <TextField fx:id="commissionPercentageField" layoutX="140.0" layoutY="115.0" prefWidth="200"/>
+
+        <!-- Verify Billed Cases -->
+        <Button fx:id="verifyLawyerCasesBtn"
+                layoutX="360.0" layoutY="75.0"
+                onAction="#verifyLawyerCases"
+                text="Verify Cases" />
+
+        <!-- Calculate Commission -->
+        <Button fx:id="calculateCommissionBtn"
+                layoutX="360.0" layoutY="115.0"
+                onAction="#calculateCommission"
+                text="Calculate Commission" />
+
+        <!-- Commission Amount Display -->
+        <Label layoutX="40.0" layoutY="160.0" text="Commission Amount:"/>
+        <Label fx:id="commissionAmountLabel" layoutX="160.0" layoutY="160.0" text="0.00"/>
+        
+        <!-- Commission Result Field -->
+        <TextField fx:id="commissionResultField" layoutX="280.0" layoutY="155.0" prefWidth="150" editable="false"/>
+
+        <!-- Confirmation and Status Labels -->
+        <Label fx:id="commissionConfirmationLabel" layoutX="40.0" layoutY="200.0" text=""/>
+        <Label fx:id="commissionStatusLabel" layoutX="40.0" layoutY="230.0" text=""/>
+
+        <!-- Commission Records Table -->
+        <Label layoutX="40.0" layoutY="270.0" text="Commission Records" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <TableView fx:id="commissionTable" layoutX="40.0" layoutY="300.0" prefHeight="230.0" prefWidth="670.0">
+            <columns>
+                <TableColumn fx:id="lawyerIdCol" text="Lawyer ID" prefWidth="100.0"/>
+                <TableColumn fx:id="lawyerNameCol" text="Lawyer Name" prefWidth="150.0"/>
+                <TableColumn fx:id="percentageCol" text="Percentage" prefWidth="100.0"/>
+                <TableColumn fx:id="totalBilledCol" text="Total Billed" prefWidth="120.0"/>
+                <TableColumn fx:id="commissionAmountCol" text="Commission" prefWidth="120.0"/>
+            </columns>
+        </TableView>
+
+    </children>
+</AnchorPane>

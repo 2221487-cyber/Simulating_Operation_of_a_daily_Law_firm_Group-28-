@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.simulating_operation_of_a_daily_law_firm_group28.Accountant.Controller.Acc_ManageExpensesController">
+
+    <children>
+
+        <!-- Record Expense Button -->
+        <Button fx:id="recordExpenseBtn"
+                layoutX="40.0" layoutY="30.0"
+                onAction="#recordExpense"
+                text="Record Expense" />
+
+        <!-- Expense Category -->
+        <Label layoutX="40.0" layoutY="80.0" text="Category"/>
+        <TextField fx:id="expenseCategoryField" layoutX="140.0" layoutY="75.0" prefWidth="200"/>
+
+        <!-- Expense Amount -->
+        <Label layoutX="40.0" layoutY="120.0" text="Amount"/>
+        <TextField fx:id="expenseAmountField" layoutX="140.0" layoutY="115.0" prefWidth="200"/>
+
+        <!-- Expense Date -->
+        <Label layoutX="40.0" layoutY="160.0" text="Date"/>
+        <DatePicker fx:id="expenseDatePicker" layoutX="140.0" layoutY="155.0"/>
+
+        <!-- Validate and Save Buttons -->
+        <Button fx:id="validateExpenseBtn"
+                layoutX="360.0" layoutY="75.0"
+                onAction="#validateExpense"
+                text="Validate"/>
+
+        <Button fx:id="saveExpenseBtn"
+                layoutX="360.0" layoutY="115.0"
+                onAction="#saveExpense"
+                text="Save Expense"/>
+
+        <!-- Confirmation Label -->
+        <Label fx:id="expenseConfirmationLabel" layoutX="40.0" layoutY="200.0" text=""/>
+
+        <!-- Expense Records Table -->
+        <Label layoutX="40.0" layoutY="230.0" text="Expense Records" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <TableView fx:id="expenseTable" layoutX="40.0" layoutY="260.0" prefHeight="220.0" prefWidth="620.0">
+            <columns>
+                <TableColumn fx:id="expenseIdCol" text="Expense ID" prefWidth="120.0"/>
+                <TableColumn fx:id="categoryCol" text="Category" prefWidth="150.0"/>
+                <TableColumn fx:id="expenseAmountCol" text="Amount" prefWidth="100.0"/>
+                <TableColumn fx:id="expenseDateCol" text="Date" prefWidth="120.0"/>
+                <TableColumn fx:id="descriptionCol" text="Description" prefWidth="130.0"/>
+            </columns>
+        </TableView>
+
+    </children>
+</AnchorPane>

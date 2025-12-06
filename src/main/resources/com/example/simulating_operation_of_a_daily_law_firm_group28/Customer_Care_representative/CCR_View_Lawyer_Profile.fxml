@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulating_operation_of_a_daily_law_firm_group28.Customer_Care_representative.Controller.CCR_View_Lawyer_Profilecontroller">
+   <children>
+      <TableView fx:id="TVLawyerList" layoutX="67.0" layoutY="80.0" prefHeight="236.0" prefWidth="382.0">
+        <columns>
+          <TableColumn fx:id="TCLawyerid" prefWidth="96.0" text="Lawyer Id" />
+          <TableColumn fx:id="TCLawyerlistname" prefWidth="89.60003662109375" text="Name" />
+            <TableColumn fx:id="TClawyerlistExpertise" prefWidth="92.0" text="Expertise" />
+            <TableColumn fx:id="TClawyerlistAvailable" minWidth="0.0" prefWidth="101.60003662109375" text="Available" />
+        </columns>
+      </TableView>
+      <Button layoutX="93.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonViewLawyersBack" text="Back" />
+   </children>
+</AnchorPane>

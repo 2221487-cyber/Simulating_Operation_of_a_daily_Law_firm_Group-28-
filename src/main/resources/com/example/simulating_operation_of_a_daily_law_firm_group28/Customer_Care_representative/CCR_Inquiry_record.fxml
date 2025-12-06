@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulating_operation_of_a_daily_law_firm_group28.Customer_Care_representative.Controller.CCR_Inquiry_recordcontroller">
+   <children>
+      <TextField fx:id="TFInquiryrecordclientname" layoutX="151.0" layoutY="39.0" />
+      <TextArea fx:id="TAInquiryrecordDescription" layoutX="145.0" layoutY="81.0" prefHeight="100.0" prefWidth="178.0" />
+      <ComboBox fx:id="CBInquiryrecordcategory" layoutX="151.0" layoutY="200.0" prefWidth="150.0" />
+      <Label fx:id="TFinquiryClientname" layoutX="40.0" layoutY="31.0" text="Client Name" />
+      <Label fx:id="TAinquiryDescription" layoutX="32.0" layoutY="81.0" text="Inquiry Description" />
+      <Label fx:id="CBinquiryType" layoutX="40.0" layoutY="204.0" text="Category" />
+      <Button layoutX="93.0" layoutY="301.0" mnemonicParsing="false" onAction="#buttonInquiryrecordSubmit" text="Submit" />
+      <Button layoutX="182.0" layoutY="301.0" mnemonicParsing="false" onAction="#buttonInquiryrecordBack" text="Back" />
+   </children>
+</AnchorPane>

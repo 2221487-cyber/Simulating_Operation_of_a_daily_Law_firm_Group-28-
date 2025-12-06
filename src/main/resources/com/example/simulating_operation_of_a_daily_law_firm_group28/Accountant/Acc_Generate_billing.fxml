@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="650.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.simulating_operation_of_a_daily_law_firm_group28.Accountant.Controller.Acc_Generate_billingcontroller">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="40.0" layoutY="10.0" text="Generate Client Billing"/>
+
+        <!-- EVENT 2: Input Client ID -->
+        <Label layoutX="40.0" layoutY="45.0" text="Client ID:" />
+        <TextField fx:id="clientIdField" layoutX="140.0" layoutY="40.0" prefWidth="200" promptText="Enter client ID"/>
+
+        <!-- EVENT 1: Generate Client Bill -->
+        <Button fx:id="generateBillBtn"
+                layoutX="360.0" layoutY="40.0"
+                onAction="#generateBill"
+                text="Load Billable Items" />
+
+        <!-- EVENT 3 + 4: Verify Case + Fetch Billable Items -->
+        <Label layoutX="40.0" layoutY="75.0" text="Billable Items:"/>
+        <TableView fx:id="billableItemsTable"
+                   layoutX="40.0" layoutY="95.0"
+                   prefWidth="560" prefHeight="160">
+
+            <columns>
+                <TableColumn fx:id="serviceNameCol" text="Service" prefWidth="150"/>
+                <TableColumn fx:id="serviceHoursCol" text="Hours" prefWidth="80"/>
+                <TableColumn fx:id="serviceRateCol" text="Rate" prefWidth="80"/>
+                <TableColumn fx:id="serviceFeeCol" text="Fee" prefWidth="100"/>
+                <TableColumn fx:id="serviceTotalCol" text="Total" prefWidth="150"/>
+            </columns>
+
+        </TableView>
+
+        <!-- EVENT 5: Discount + Tax + Calculate Total -->
+        <Label layoutX="40.0" layoutY="270.0" text="Discount (%):" />
+        <TextField fx:id="discountField" layoutX="140.0" layoutY="265.0" prefWidth="80" promptText="0"/>
+
+        <Label layoutX="240.0" layoutY="270.0" text="Tax (%):" />
+        <TextField fx:id="taxField" layoutX="300.0" layoutY="265.0" prefWidth="80" promptText="0"/>
+
+        <Button fx:id="calculateTotalBtn"
+                layoutX="410.0" layoutY="263.0"
+                onAction="#calculateTotal"
+                text="Calculate Total" />
+
+        <Label layoutX="40.0" layoutY="305.0" text="Subtotal:" />
+        <Label fx:id="subtotalLabel" layoutX="140.0" layoutY="305.0" text="0.00"/>
+
+        <Label layoutX="40.0" layoutY="330.0" text="Final Total:"/>
+        <Label fx:id="finalTotalLabel" layoutX="140.0" layoutY="330.0" text="0.00"/>
+
+        <!-- EVENT 6: View Invoice PDF -->
+        <Button fx:id="viewInvoiceBtn"
+                layoutX="260.0" layoutY="370.0"
+                onAction="#viewInvoice"
+                text="View Invoice"/>
+
+        <!-- EVENT 7: Save Billing Record -->
+        <Button fx:id="saveBillingBtn"
+                layoutX="390.0" layoutY="370.0"
+                onAction="#saveBilling"
+                text="Save Billing Record"/>
+
+        <!-- Status Label -->
+        <Label fx:id="statusLabel" layoutX="40.0" layoutY="410.0" text=""/>
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulating_operation_of_a_daily_law_firm_group28.Accountant.Controller.Acc_FinancialReportController">
+
+    <children>
+
+        <!-- Title -->
+        <Label layoutX="40.0" layoutY="10.0" text="Financial Report Generator"/>
+
+        <!-- Report Type Selection -->
+        <Label layoutX="40.0" layoutY="45.0" text="Report Type:" />
+        <ChoiceBox fx:id="reportTypeChoiceBox" layoutX="140.0" layoutY="40.0" prefWidth="200" />
+
+        <!-- Date Range Selection -->
+        <Label layoutX="40.0" layoutY="85.0" text="Start Date:" />
+        <DatePicker fx:id="reportStartDatePicker" layoutX="140.0" layoutY="80.0" prefWidth="150"/>
+
+        <Label layoutX="320.0" layoutY="85.0" text="End Date:" />
+        <DatePicker fx:id="reportEndDatePicker" layoutX="400.0" layoutY="80.0" prefWidth="150"/>
+
+        <!-- Generate Report Button -->
+        <Button fx:id="generateReportBtn" layoutX="40.0" layoutY="120.0" onAction="#generateReport" text="Generate Report" />
+        <Button fx:id="clearReportBtn" layoutX="180.0" layoutY="120.0" onAction="#clearReport" text="Clear" />
+
+        <!-- Table for Financial Data -->
+        <Label layoutX="40.0" layoutY="160.0" text="Report Data:"/>
+        <TableView fx:id="reportDataTable" layoutX="40.0" layoutY="180.0" prefHeight="200" prefWidth="560">
+            <columns>
+                <TableColumn fx:id="reportCategoryCol" prefWidth="300" text="Category" />
+                <TableColumn fx:id="reportAmountCol" prefWidth="260" text="Amount" />
+            </columns>
+        </TableView>
+
+        <!-- Summary Display -->
+        <Label layoutX="40.0" layoutY="390.0" text="Summary:"/>
+        <TextArea fx:id="reportSummaryArea" layoutX="40.0" layoutY="410.0" prefHeight="70" prefWidth="560" editable="false" wrapText="true" promptText="Select report type and date range, then click Generate Report"/>
+
+    </children>
+</AnchorPane>
