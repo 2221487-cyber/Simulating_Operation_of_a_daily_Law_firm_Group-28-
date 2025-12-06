@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.sec3_2221869_project.Firm_OwnerController">
+    <children>
+        <Label layoutX="25.0" layoutY="20.0" style="-fx-font-size: 28; -fx-font-weight: bold;" text="Firm Owner Dashboard" />
+        <Label layoutX="25.0" layoutY="55.0" style="-fx-font-size: 14;" text="Manage your legal firm efficiently" />
+
+        <!-- Row 1 -->
+        <Button fx:id="btnGenerateReport" layoutX="25.0" layoutY="100.0" prefHeight="120.0" prefWidth="200.0" text="Generate Financial Report" onAction="#handleGenerateReport" />
+        <Button fx:id="btnViewDashboard" layoutX="250.0" layoutY="100.0" prefHeight="120.0" prefWidth="200.0" text="View KPI Dashboard" onAction="#handleViewDashboard" />
+        <Button fx:id="btnManageRequests" layoutX="475.0" layoutY="100.0" prefHeight="120.0" prefWidth="200.0" text="Manage Vacation Requests" onAction="#handleManageRequests" />
+
+        <!-- Row 2 -->
+        <Button fx:id="btnManageRates" layoutX="25.0" layoutY="240.0" prefHeight="120.0" prefWidth="200.0" text="Manage Lawyer Rates" onAction="#handleManageRates" />
+        <Button fx:id="btnApproveDocuments" layoutX="250.0" layoutY="240.0" prefHeight="120.0" prefWidth="200.0" text="Document Approval" onAction="#handleApproveDocuments" />
+        <Button fx:id="btnSearch" layoutX="475.0" layoutY="240.0" prefHeight="120.0" prefWidth="200.0" text="Search Client/Case" onAction="#handleSearch" />
+
+        <!-- Row 3 -->
+        <Button fx:id="btnSetGoals" layoutX="25.0" layoutY="380.0" prefHeight="120.0" prefWidth="200.0" text="Set Firm Goals" onAction="#handleSetGoals" />
+        <Button fx:id="btnArchiveCases" layoutX="250.0" layoutY="380.0" prefHeight="120.0" prefWidth="200.0" text="Archive Cases" onAction="#handleArchiveCases" />
+    </children>
+</AnchorPane>

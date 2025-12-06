@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.sec3_2221869_project.SetFirmGoalController">
+   <children>
+      <Label layoutX="87.0" layoutY="48.0" text="Target Billable Hours" />
+      <TextField fx:id="inputForNumericalGoaTextFieldl" layoutX="79.0" layoutY="91.0" prefHeight="25.0" prefWidth="170.0" promptText="Input For the Numerical Goal" />
+      <Button layoutX="124.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleSaveGoalButtonOnAction" text="Save Goal" />
+   </children>
+</AnchorPane>
