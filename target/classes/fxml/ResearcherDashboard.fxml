@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lawfirm.controllers.ResearcherDashboardController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #4CAF50; -fx-padding: 15;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Legal Researcher Dashboard">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Text>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+               </children>
+            </HBox>
+            <Label fx:id="welcomeLabel" text="Welcome, Researcher" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <GridPane hgap="15.0" vgap="15.0" VBox.vgrow="ALWAYS">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="createResearchButton" mnemonicParsing="false" onAction="#navigateToCreateResearch" prefHeight="80.0" prefWidth="180.0" text="Create Research Record" GridPane.columnIndex="0" GridPane.rowIndex="0" wrapText="true" />
+                  <Button fx:id="searchPrecedentsButton" mnemonicParsing="false" onAction="#navigateToSearchPrecedents" prefHeight="80.0" prefWidth="180.0" text="Search Legal Precedents" GridPane.columnIndex="1" GridPane.rowIndex="0" wrapText="true" />
+                  <Button fx:id="savePrecedentButton" mnemonicParsing="false" onAction="#navigateToSavePrecedent" prefHeight="80.0" prefWidth="180.0" text="Save Precedent to Library" GridPane.columnIndex="2" GridPane.rowIndex="0" wrapText="true" />
+                  <Button fx:id="generateSummaryButton" mnemonicParsing="false" onAction="#navigateToGenerateSummary" prefHeight="80.0" prefWidth="180.0" text="Generate Research Summary" GridPane.columnIndex="3" GridPane.rowIndex="0" wrapText="true" />
+                  <Button fx:id="comparePrecedentsButton" mnemonicParsing="false" onAction="#navigateToComparePrecedents" prefHeight="80.0" prefWidth="180.0" text="Compare Two Precedents" GridPane.columnIndex="0" GridPane.rowIndex="1" wrapText="true" />
+                  <Button fx:id="exportReportButton" mnemonicParsing="false" onAction="#navigateToExportReport" prefHeight="80.0" prefWidth="180.0" text="Export Research Report" GridPane.columnIndex="1" GridPane.rowIndex="1" wrapText="true" />
+                  <Button fx:id="editResearchButton" mnemonicParsing="false" onAction="#navigateToEditResearch" prefHeight="80.0" prefWidth="180.0" text="Edit Previous Research Record" GridPane.columnIndex="2" GridPane.rowIndex="1" wrapText="true" />
+                  <Button fx:id="viewHistoryButton" mnemonicParsing="false" onAction="#navigateToViewHistory" prefHeight="80.0" prefWidth="180.0" text="View Research History" GridPane.columnIndex="3" GridPane.rowIndex="1" wrapText="true" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
+
