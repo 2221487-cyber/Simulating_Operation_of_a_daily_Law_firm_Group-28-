@@ -37,19 +37,18 @@ public class Acc_FinancialReportController
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Initialize table columns
+
         reportCategoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
         reportAmountCol.setCellValueFactory(new PropertyValueFactory<>("amount"));
         
-        // Initialize report type dropdown
+
         reportTypeChoiceBox.getItems().addAll("Income Statement", "Balance Sheet", "Cash Flow", "All Reports");
         reportTypeChoiceBox.setValue("All Reports");
-        
-        // Set default dates
+
         reportStartDatePicker.setValue(LocalDate.now().minusMonths(1));
         reportEndDatePicker.setValue(LocalDate.now());
         
-        // Load all reports initially
+
         loadAllReports();
     }
 
@@ -58,28 +57,27 @@ public class Acc_FinancialReportController
             allReports.clear();
             allReports.addAll(AccountantStorage.loadFinancialReports());
             
-            // If no data, generate sample reports
+
             if (allReports.isEmpty()) {
-                // Income Statement items
+
                 allReports.add(new FinancialReport("Legal Fees Revenue", 250000));
                 allReports.add(new FinancialReport("Consultation Revenue", 80000));
                 allReports.add(new FinancialReport("Salaries Expense", -120000));
                 allReports.add(new FinancialReport("Office Rent Expense", -30000));
                 allReports.add(new FinancialReport("Utilities Expense", -5000));
                 
-                // Balance Sheet items
+
                 allReports.add(new FinancialReport("Cash Assets", 150000));
                 allReports.add(new FinancialReport("Accounts Receivable", 75000));
                 allReports.add(new FinancialReport("Office Equipment", 50000));
                 allReports.add(new FinancialReport("Accounts Payable", -40000));
                 allReports.add(new FinancialReport("Long-term Debt", -100000));
                 
-                // Cash Flow items
+
                 allReports.add(new FinancialReport("Operating Cash Flow", 180000));
                 allReports.add(new FinancialReport("Investing Cash Flow", -50000));
                 allReports.add(new FinancialReport("Financing Cash Flow", -30000));
-                
-                // Save sample data
+
                 for (FinancialReport report : allReports) {
                     AccountantStorage.saveFinancialReport(report);
                 }
@@ -95,7 +93,7 @@ public class Acc_FinancialReportController
         LocalDate startDate = reportStartDatePicker.getValue();
         LocalDate endDate = reportEndDatePicker.getValue();
         
-        // Validate inputs
+
         if (reportType == null || reportType.isEmpty()) {
             reportSummaryArea.setText("Error: Please select a report type");
             return;
@@ -111,25 +109,25 @@ public class Acc_FinancialReportController
             return;
         }
         
-        // Filter reports based on type
+
         reportList.clear();
-        
+
         if (reportType.equals("All Reports")) {
             reportList.addAll(allReports);
         } else if (reportType.equals("Income Statement")) {
             for (FinancialReport report : allReports) {
-                if (report.getCategory().contains("Revenue") || 
-                    report.getCategory().contains("Expense") || 
+                if (report.getCategory().contains("Revenue") ||
+                    report.getCategory().contains("Expense") ||
                     report.getCategory().contains("Income")) {
                     reportList.add(report);
                 }
             }
         } else if (reportType.equals("Balance Sheet")) {
             for (FinancialReport report : allReports) {
-                if (report.getCategory().contains("Assets") || 
-                    report.getCategory().contains("Receivable") || 
+                if (report.getCategory().contains("Assets") ||
+                    report.getCategory().contains("Receivable") ||
                     report.getCategory().contains("Equipment") ||
-                    report.getCategory().contains("Payable") || 
+                    report.getCategory().contains("Payable") ||
                     report.getCategory().contains("Debt")) {
                     reportList.add(report);
                 }

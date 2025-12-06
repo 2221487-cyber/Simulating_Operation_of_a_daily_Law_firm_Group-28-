@@ -38,14 +38,14 @@ public class Acc_CashFlowController
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Initialize table columns
+
         cashFlowIdCol.setCellValueFactory(new PropertyValueFactory<>("cashFlowId"));
         dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         incomeCol.setCellValueFactory(new PropertyValueFactory<>("income"));
         expenseCol.setCellValueFactory(new PropertyValueFactory<>("expense"));
         netCashCol.setCellValueFactory(new PropertyValueFactory<>("netCash"));
 
-        // Load data from storage
+
         loadCashFlowData();
     }
 
@@ -54,7 +54,7 @@ public class Acc_CashFlowController
             cashFlowList.clear();
             cashFlowList.addAll(AccountantStorage.loadCashFlow());
             
-            // If no data, add sample data
+
             if (cashFlowList.isEmpty()) {
                 CashFlow cf1 = new CashFlow("CF001", LocalDate.now().minusDays(30), 50000, 30000, 20000);
                 CashFlow cf2 = new CashFlow("CF002", LocalDate.now().minusDays(20), 60000, 35000, 25000);
@@ -76,7 +76,7 @@ public class Acc_CashFlowController
     @javafx.fxml.FXML
     public void viewCashFlow(ActionEvent actionEvent) {
         try {
-            // Update chart
+
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName("Net Cash Flow");
             for (CashFlow cf : cashFlowList) {

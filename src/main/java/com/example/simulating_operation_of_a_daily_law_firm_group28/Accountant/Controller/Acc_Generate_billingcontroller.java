@@ -46,14 +46,13 @@ public class Acc_Generate_billingcontroller {
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Initialize table columns
+
         serviceNameCol.setCellValueFactory(new PropertyValueFactory<>("serviceName"));
         serviceHoursCol.setCellValueFactory(new PropertyValueFactory<>("hours"));
         serviceRateCol.setCellValueFactory(new PropertyValueFactory<>("rate"));
         serviceFeeCol.setCellValueFactory(new PropertyValueFactory<>("fee"));
         serviceTotalCol.setCellValueFactory(new PropertyValueFactory<>("total"));
 
-        // Initialize default values
         discountField.setText("0");
         taxField.setText("0");
         finalTotalLabel.setText("0.00");
@@ -78,7 +77,6 @@ public class Acc_Generate_billingcontroller {
     @javafx.fxml.FXML
     public void calculateTotal(ActionEvent actionEvent) {
         try {
-            // Calculate subtotal from all billable items in the table
             double subtotal = 0.0;
             for (BillableItem item : billableItems) {
                 subtotal += item.getTotal();
@@ -86,14 +84,12 @@ public class Acc_Generate_billingcontroller {
 
             double discount = Double.parseDouble(discountField.getText().isEmpty() ? "0" : discountField.getText());
             double tax = Double.parseDouble(taxField.getText().isEmpty() ? "0" : taxField.getText());
-
-            // Calculate discount and tax amounts
             double discountAmount = subtotal * (discount / 100);
             double afterDiscount = subtotal - discountAmount;
             double taxAmount = afterDiscount * (tax / 100);
             double total = afterDiscount + taxAmount;
 
-            // Display results
+
             subtotalLabel.setText(String.format("%.2f", subtotal));
             finalTotalLabel.setText(String.format("%.2f", total));
             statusLabel.setText(String.format("Subtotal: %.2f | Discount: %.2f | Tax: %.2f | Total: %.2f",
@@ -111,20 +107,18 @@ public class Acc_Generate_billingcontroller {
             return;
         }
 
-        // Clear existing items
+
         billableItems.clear();
 
-        // Load or generate sample billable items for the client
-        // In a real application, this would load from storage based on clientId
         billableItems.add(new BillableItem("Legal Consultation", 5.0, 150.0, 0.0));
         billableItems.add(new BillableItem("Document Preparation", 3.0, 100.0, 50.0));
         billableItems.add(new BillableItem("Court Representation", 8.0, 200.0, 100.0));
         billableItems.add(new BillableItem("Research", 4.0, 120.0, 0.0));
 
-        // Set items to table
+
         billableItemsTable.setItems(billableItems);
 
-        // Calculate initial subtotal
+
         double subtotal = billableItems.stream().mapToDouble(BillableItem::getTotal).sum();
         subtotalLabel.setText(String.format("%.2f", subtotal));
 

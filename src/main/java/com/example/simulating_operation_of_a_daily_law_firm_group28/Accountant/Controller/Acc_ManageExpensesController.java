@@ -52,7 +52,7 @@ public class Acc_ManageExpensesController
         expenseDateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         
-        // Load existing expenses from storage
+
         loadExpenses();
     }
     
@@ -96,7 +96,7 @@ public class Acc_ManageExpensesController
             String expenseId = "EXP" + System.currentTimeMillis();
             Expense expense = new Expense(expenseId, category, amount, date, "Recorded expense");
             
-            // Save to file storage
+
             try {
                 AccountantStorage.saveExpense(expense);
                 loadExpenses(); // Refresh table

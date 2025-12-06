@@ -49,7 +49,7 @@ public class Acc_LawyerCommissionController
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Initialize table columns
+
         lawyerIdCol.setCellValueFactory(new PropertyValueFactory<>("lawyerId"));
         lawyerNameCol.setCellValueFactory(new PropertyValueFactory<>("lawyerName"));
         percentageCol.setCellValueFactory(new PropertyValueFactory<>("commissionPercentage"));
@@ -58,7 +58,7 @@ public class Acc_LawyerCommissionController
         
         commissionAmountLabel.setText("0.00");
         
-        // Load existing commissions from storage
+
         loadCommissions();
     }
     
@@ -80,7 +80,7 @@ public class Acc_LawyerCommissionController
             showAlert(Alert.AlertType.WARNING, "Validation Error", "Please enter Lawyer ID");
             return;
         }
-        // Simulate verification - in real app, query database
+
         totalBilled = 50000 + Math.random() * 50000;
         commissionConfirmationLabel.setText("Verified: Total billed $" + String.format("%.2f", totalBilled));
     }
@@ -104,7 +104,7 @@ public class Acc_LawyerCommissionController
 
             LawyerCommission commission = new LawyerCommission(lawyerId, "Lawyer Name", percentage, totalBilled, commissionAmount);
             
-            // Save to file storage
+
             try {
                 AccountantStorage.saveCommission(commission);
                 loadCommissions(); // Refresh table

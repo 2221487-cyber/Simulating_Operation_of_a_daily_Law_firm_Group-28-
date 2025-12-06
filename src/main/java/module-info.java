@@ -22,4 +22,32 @@ module com.example.simulating_operation_of_a_daily_law_firm_group28 {
 
     // Export Storage package
     exports com.example.simulating_operation_of_a_daily_law_firm_group28.Storage;
+
+    // Open Firm Owner packages to JavaFX
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.FirmOwner to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.FirmOwner;
+
+    // Open Court Clerk Client packages to JavaFX
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient.controllers to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient.controllers;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient.models to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient.models;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient.utils to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient.utils;
+
+    // Open Lawyer Legal Researcher packages to JavaFX
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.controllers to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.controllers;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.controllers.lawyer to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.controllers.lawyer;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.controllers.researcher to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.controllers.researcher;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.models to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.models;
+    opens com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.utils to javafx.fxml;
+    exports com.example.simulating_operation_of_a_daily_law_firm_group28.LawyerLegalResearcher.utils;
 }

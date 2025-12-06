@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.simulating_operation_of_a_daily_law_firm_group28.CourtClerkClient.controllers.NewClientController">
+   <children>
+      <Label text="New Client Management" style="-fx-font-size: 20px; -fx-font-weight: bold;">
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      
+      <GridPane hgap="10" vgap="15" alignment="CENTER_LEFT">
+         <columnConstraints>
+            <ColumnConstraints minWidth="120.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="250.0" prefWidth="300.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Client ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtClientId" promptText="Click to auto-generate ID" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            
+            <Label text="Client Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtClientName" promptText="Enter client name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            
+            <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="txtClientEmail" promptText="Enter email address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            
+            <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="txtClientPhone" promptText="Enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" />
+         </VBox.margin>
+      </GridPane>
+      
+      <HBox spacing="10" alignment="CENTER_LEFT">
+         <children>
+            <Button fx:id="btnSaveClient" text="Save Client" onAction="#handleSaveClient" style="-fx-font-size: 14px; -fx-pref-width: 120; -fx-pref-height: 35;" />
+            <Button fx:id="btnBack" text="Back to Dashboard" onAction="#handleBack" style="-fx-font-size: 14px; -fx-pref-width: 150; -fx-pref-height: 35;" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" />
+         </VBox.margin>
+      </HBox>
+      
+      <Label text="Existing Clients:" style="-fx-font-size: 16px; -fx-font-weight: bold;">
+         <VBox.margin>
+            <Insets bottom="10.0" left="20.0" top="10.0" />
+         </VBox.margin>
+      </Label>
+      
+      <TableView fx:id="tableViewClients" prefHeight="250.0" prefWidth="600.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="150.0" text="Client ID" />
+            <TableColumn fx:id="colName" prefWidth="200.0" text="Name" />
+            <TableColumn fx:id="colEmail" prefWidth="200.0" text="Email" />
+            <TableColumn fx:id="colPhone" prefWidth="150.0" text="Phone" />
+         </columns>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" />
+         </VBox.margin>
+      </TableView>
+   </children>
+</VBox>

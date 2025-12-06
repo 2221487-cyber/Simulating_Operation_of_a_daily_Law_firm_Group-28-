@@ -30,10 +30,9 @@ public class Acc_GenerateReceiptController
 
     @javafx.fxml.FXML
     public void initialize() {
-        // Set default payment date to today
         paymentDatePicker.setValue(LocalDate.now());
         
-        // Initialize payment method ComboBox
+
         ComboBoxPaymentMethod.getItems().addAll("Cash", "Credit Card", "Debit Card", "Bank Transfer", "Check");
         ComboBoxPaymentMethod.setValue("Cash");
         
@@ -51,7 +50,7 @@ public class Acc_GenerateReceiptController
             return;
         }
         
-        // Display receipt in the text area
+
         String receiptText = generateReceiptText(clientId, invoiceId);
         receiptDetailsArea.setText(receiptText);
         statusLabel.setText("Receipt displayed successfully");
@@ -127,9 +126,9 @@ public class Acc_GenerateReceiptController
             receipt.append("Payment Method: ").append(method).append("\n");
         }
         
-        receipt.append("\n========================================\n");
-        receipt.append("         Thank you for your payment!\n");
-        receipt.append("========================================\n");
+
+        receipt.append("Thank you for your payment!\n");
+
         
         return receipt.toString();
     }
